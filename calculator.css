@@ -1,0 +1,107 @@
+*{
+    padding:0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+:root{
+    --calheight:650px;
+    --displayheight:200px;
+    --phonedisheight:30%;
+}
+#calculatorapp{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+}
+#calculator{
+    height: var(--calheight);
+    width: 350px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.164);
+}
+#caldispaly{
+    height: var(--displayheight);
+    background-color: #ffffff;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 20px;
+    text-align: right;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+#calcontent{
+    width: 100%;
+    user-select: auto;
+}
+.calinput{
+    font-size: 23px;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+#calcontent .calinput.smallcalinput{
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+}
+.caloutput{
+    font-size: 20px;
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+    overflow: auto;
+}
+#calcontent .caloutput.bigcaloutput{
+    font-size: 36px;
+    font-weight: 500;
+    color: #000;
+}
+#caloutput::-webkit-scrollbar, #calinput::-webkit-scrollbar{
+    display: none;
+}
+#calbtnbox{
+    min-height:calc(100% - var(--displayheight));
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding:20px;
+    gap: 20px;
+}
+#calbtnbox .calbtn{
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.074);
+}
+#calbtnbox .calbtn.operator{
+    background-color: #cccccc;
+}
+#calbtnbox .calbtn.operator:last-child{
+    background-color: rgb(255, 99, 27);
+    color: white;
+}
+
+@media screen and (max-width:557px){
+    #calculator{
+        width: 100%;
+        height: 90%;
+    }
+    #caldispaly{
+        height: var(--phonedisheight);
+    }
+    #calbtnbox{
+        min-height:calc(100% - var(--phonedisheight));
+    }
+}
+@media screen and (max-height:651px){
+    #calculator{
+        height: 90%;
+    }
+}
